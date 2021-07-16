@@ -1,4 +1,6 @@
+import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { CharacterSheetService } from '../character-sheet.service';
 import { Ability } from '../models/ability';
 
 @Component({
@@ -11,9 +13,14 @@ export class AbilityTableComponent implements OnInit {
 
   @Input() features: Ability[] = [];
 
-  constructor() { }
+  constructor(
+    private characterService: CharacterSheetService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  dragEnd(event: CdkDragEnd) {
+    this.characterService.dragEnd(event);
+  }
 }

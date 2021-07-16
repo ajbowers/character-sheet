@@ -1,20 +1,14 @@
-.rectangle {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+.component {
   color:rgb(182, 191, 200);
-  margin: auto;
   padding: 10px;
   min-width: 200px;
 }
 
-.rectangle:hover {
+.component:hover {
   border: solid 1px rgb(182, 191, 200);
+  background-color:black;
 }
 
-#baseCharacterStats {
+#generalBlock {
   width:250px;
-
 }

@@ -1,8 +1,19 @@
 <div class="character-sheet">
-  <app-base-character class="base-char rectangle" [character]="character"></app-base-character>
-  <app-stat-block [statBlock]="character.coreStats"></app-stat-block>
-  <app-ability-table  [features]="character.racialAbilities"></app-ability-table>
-  <app-class-block  [character]="character"></app-class-block>
-  <app-item-table  [items]="compileItems(character)"></app-item-table>
-  <app-ability-table   [features]="character.classAbilities"></app-ability-table>
+  <div class="save-position-button" style="float: right; padding-right: 15px; padding-top: 15px">
+    <div (click)="saveAllComponentPosition()">
+      SAVE
+    </div>
+  </div>
+  <div class="reset-position-button" style="float: right; padding-right: 15px; padding-top: 15px">
+    <div (click)="resetAllComponentPosition()">
+      RESET
+    </div>
+  </div>
+  <app-base-character class="component" [character]="character"></app-base-character>
+  <app-stat-block     class="component" [statBlock]="character.coreStats"></app-stat-block>
+  <app-class-block    class="component" [character]="character"></app-class-block>
+  <app-item-table     class="component" [items]="compileItems(character)"></app-item-table>
+  <app-ability-table  class="component" [features]="compileFeatures(character)"></app-ability-table>
 </div>
+
+

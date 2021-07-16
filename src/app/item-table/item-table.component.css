@@ -12,6 +12,12 @@ td, th {
   text-align: center;
 }
 
-.items {
-  padding: 15px;
+.component {
+  width: 98%;
+  color:rgb(182, 191, 200);
+}
+
+.component:hover {
+  border: solid 1px rgb(182, 191, 200);
+  background-color:black;
 }

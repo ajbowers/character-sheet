@@ -2,8 +2,9 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, ViewChild
 import { Character } from '../models/character';
 import { StatBlock } from '../models/statblock';
 import { ResizeEvent } from 'angular-resizable-element';
-import { CdkDragEnd } from '@angular/cdk/drag-drop';
+import { CdkDragEnd, CdkDragStart } from '@angular/cdk/drag-drop';
 import { ElementRef } from '@angular/core';
+import { CharacterSheetService } from '../character-sheet.service';
 
 
 @Component({
@@ -17,18 +18,14 @@ export class BaseCharacterComponent implements OnInit {
   @Input() character: Character = new Character("", "", "","",0,[],[],[],new StatBlock(0,0,0,0,0,0), 0, 0, [], [], [], []);
 
 
-  constructor() { }
+
+
+  constructor(private characterService: CharacterSheetService) { }
 
   ngOnInit(): void {
   }
 
   dragEnd(event: CdkDragEnd) {
-    let positionStorage = window.localStorage;
-    let id = event.source.element.nativeElement.id;
-    positionStorage.setItem(id + "DeltaX", event.distance.x.toString());
-    positionStorage.setItem(id + "DeltaY", event.distance.y.toString());
+    this.characterService.dragEnd(event);
   }
-
-
-
 }

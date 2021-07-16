@@ -13,7 +13,6 @@ export class Character {
   age: number = 0;
   classes: Class[] = [];
   racialAbilities: Ability[] = [];
-  classAbilities: Ability[] = [];
   coreStats: StatBlock;
   hitPointsCurrent: number = 0;
   hitPointsMax: number = 0;
@@ -31,7 +30,7 @@ export class Character {
     this.age = age;
     this.classes = classes;
     this.racialAbilities = racialAbilities;
-    this.classAbilities = classAbilities;
+
     this.coreStats = coreStats;
     this.hitPointsCurrent = hitPointsCurrent;
     this.hitPointsMax = hitPointsMax;

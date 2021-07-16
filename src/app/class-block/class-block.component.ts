@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 import { Character } from '../models/character';
 import { Class } from '../models/class';
 import { StatBlock } from '../models/statblock';
+import { CharacterSheetService } from '../character-sheet.service';
+import { CdkDragEnd } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-class-block',
@@ -12,9 +14,15 @@ import { StatBlock } from '../models/statblock';
 export class ClassBlockComponent implements OnInit {
 
   @Input() character: Character = new Character("", "", "","",0,[],[],[],new StatBlock(0,0,0,0,0,0), 0, 0, [], [], [], []);
-  constructor() { }
+  constructor(
+    private characterService: CharacterSheetService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  dragEnd(event: CdkDragEnd) {
+    this.characterService.dragEnd(event);
   }
 
 }

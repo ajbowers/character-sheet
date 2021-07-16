@@ -3,6 +3,7 @@ th {
 }
 
 td, th {
+  width:auto;
   padding-right: 15px;
   padding-left: 15px;
   border-right: 1px solid black;
@@ -10,4 +11,22 @@ td, th {
 
 .center-cell {
   text-align: center;
+}
+
+.description {
+  max-width: 700px;
+}
+
+.component {
+  width: 98%;
+  color:rgb(182, 191, 200);
+}
+
+.component:hover {
+  border: solid 1px rgb(182, 191, 200);
+  background-color:black;
+}
+
+#baseCharacterStats {
+  width:250px;
 }

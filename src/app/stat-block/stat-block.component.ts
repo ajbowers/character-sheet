@@ -1,4 +1,6 @@
+import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { CharacterSheetService } from '../character-sheet.service';
 import { StatBlock } from '../models/statblock';
 
 @Component({
@@ -10,16 +12,18 @@ import { StatBlock } from '../models/statblock';
 export class StatBlockComponent implements OnInit {
 
   @Input('statBlock') statBlock:StatBlock = new StatBlock(8, 8, 8, 8, 8, 8);
-  constructor() { }
+  constructor(private characterService: CharacterSheetService) { }
 
   ngOnInit(): void {
   }
 
+  dragEnd(event: CdkDragEnd) {
+    this.characterService.dragEnd(event);
+  }
 
   calcMod(stat: number) {
     let result;
     result = (stat-10)/2;
-    console.log(result);
     if (result >= 0) {
       result = "+" + result;
     }

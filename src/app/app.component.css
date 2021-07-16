@@ -1,11 +1,2 @@
-.rectangle {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid 1px rgb(182, 191, 200);
-  color:rgb(182, 191, 200);
-  margin: auto;
-  padding: 10px;
-  min-width: 200px;
-}
+
+
