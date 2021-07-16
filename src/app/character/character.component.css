@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "MonoFonto";
+  src: local("MonoFonto"), url(../../assets/fonts/monofonto.ttf) format("truetype");
+}
+
+.character-sheet {
+  font-family: "MonoFonto", Arial, Helvetica, sans-serif;
+  color:rgb(182, 191, 200);
+  background-image: url(../../assets/images/gill-dorado-page-2.png);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 1060px;
+  padding-right: -20px;
+  padding-left: 20px;
+  padding-bottom: -20px;
+
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+
+}
+
+
+

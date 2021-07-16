@@ -1,0 +1,13 @@
+<div id="baseCharacterStats" class="rectangle" cdkDrag dragAndDropReposition (cdkDragEnded)="dragEnd($event)" >
+  <div>
+    <h2>[ Background ] </h2>
+    <h3 class="name">Name: {{ character.name }} </h3>
+    <h3 class="age"> Age: {{ character.age }} </h3>
+    <h3 class="align"> Alignment: {{character.alignment}} </h3>
+    <h3 class="race"> Race: {{ character.race }} </h3>
+    <div class="background">
+      <h3> Background: </h3>
+      <div> {{character.background }} </div>
+    </div>
+  </div>
+</div>

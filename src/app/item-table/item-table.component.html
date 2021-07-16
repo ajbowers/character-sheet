@@ -1,0 +1,25 @@
+<div class="items" cdkDrag>
+  <h3> [ Items ] </h3>
+  <table>
+    <tr>
+      <th> Name </th>
+      <th> Damage </th>
+      <th> Range </th>
+      <th> Effects </th>
+      <th> Value (GP) </th>
+      <th> Magical </th>
+      <th> AC </th>
+      <th> Notes </th>
+    </tr>
+    <tr *ngFor="let _item of items">
+      <td>{{_item.type}}</td>
+      <td class="center-cell">{{_item.damage}}</td>
+      <td class="center-cell">{{_item.range}}</td>
+      <td>{{_item.effects}}</td>
+      <td class="center-cell">{{_item.value}}</td>
+      <td class="center-cell">{{_item.isMagical}}</td>
+      <td class="center-cell">{{_item.armorClass}}</td>
+      <td>{{_item.notes}}</td>
+    </tr>
+  </table>
+</div>

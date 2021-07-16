@@ -1,0 +1,58 @@
+{
+  "name": "",
+  "background": [],
+  "alignment": "",
+  "race": "",
+  "age": "",
+  "classes": [],
+  "racial-abilities": [],
+  "class-abilities": [],
+  "core-stats": [
+    {
+      "strength":"",
+      "dexterity": "",
+      "constitution":"",
+      "intelligence": "",
+      "wisdom": "",
+      "charisma": ""
+    }
+  ],
+  "hit-points-cur": "",
+  "hit-points-max": "",
+  "proficiency": "",
+  "inventory": [
+    {
+      "weapons": [],
+      "armor": [],
+      "items": []
+    }
+  ],
+  "spells": [
+    {
+      "name":"",
+      "range": "",
+      "description": "",
+      "components": []
+    }
+  ],
+  "saving-throws":[],
+  "skills": [{
+    "acrobatics":"",
+    "animal-handling":"",
+    "arcana":"",
+    "athletics":"",
+    "deception":"",
+    "history":"",
+    "insight":"",
+    "intimidation":"",
+    "investigation":"",
+    "medicine":"",
+    "nature":"",
+    "perception":"",
+    "persuasion":"",
+    "religion":"",
+    "sleight-of-hand":"",
+    "stealth":"",
+    "survival": ""
+  }]
+}

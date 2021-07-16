@@ -1,0 +1,8 @@
+<div class="character-sheet">
+  <app-base-character class="base-char rectangle" [character]="character"></app-base-character>
+  <app-stat-block [statBlock]="character.coreStats"></app-stat-block>
+  <app-ability-table  [features]="character.racialAbilities"></app-ability-table>
+  <app-class-block  [character]="character"></app-class-block>
+  <app-item-table  [items]="compileItems(character)"></app-item-table>
+  <app-ability-table   [features]="character.classAbilities"></app-ability-table>
+</div>

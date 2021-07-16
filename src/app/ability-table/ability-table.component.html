@@ -1,0 +1,15 @@
+<div class="features" cdkDrag>
+  <h3>[ Features ]</h3>
+  <table>
+    <tr>
+      <th> Name </th>
+      <th> Level Req. </th>
+      <th> Description </th>
+    </tr>
+    <tr *ngFor="let _feature of features">
+      <td>{{_feature.name}}</td>
+      <td class="center-cell">{{_feature.levelReq}}</td>
+      <td>{{_feature.description}}</td>
+    </tr>
+  </table>
+</div>

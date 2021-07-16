@@ -1,0 +1,19 @@
+th {
+  text-align: center;
+  font-size: larger;
+}
+
+td {
+  font-size: larger;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.center-cell {
+  text-align: center;
+}
+
+
+.core-stats {
+  width: 200px;
+}

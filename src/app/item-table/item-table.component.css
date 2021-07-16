@@ -1,0 +1,17 @@
+th {
+  text-align: center;
+}
+
+td, th {
+  padding-right: 15px;
+  padding-left: 15px;
+  border-right: 1px solid black;
+}
+
+.center-cell {
+  text-align: center;
+}
+
+.items {
+  padding: 15px;
+}

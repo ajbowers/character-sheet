@@ -1,0 +1,11 @@
+<div class="classes" *ngFor="let class of character.classes" cdkDrag>
+  <h3> [ Class: {{class.name}} ]</h3>
+  <h4> - {{class.subclass}} - </h4>
+  <p> Hit Die: {{class.hitDice}}</p>
+  <p> Saving Throws:
+    <span *ngFor="let st of class.savingThrows">
+      <span>{{st}}</span>
+    </span>
+  </p>
+
+</div>
