@@ -1,6 +1,7 @@
 import { ElementRef } from '@angular/core';
 import { Directive, OnInit, ChangeDetectionStrategy, Renderer2 } from '@angular/core';
 
+
 @Directive({
   selector: '[dragAndDropReposition]'
 })
@@ -8,7 +9,7 @@ export class DragDropRepositionDirective {
 
   constructor(private el: ElementRef,
     private renderer: Renderer2) {
-
+      console.log(el);
     let id = el.nativeElement.id;
     let positionStorage = window.localStorage;
 

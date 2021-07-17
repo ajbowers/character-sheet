@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ClassBlockComponent } from './class-block/class-block.component';
 import { DragDropRepositionDirective } from './drag-drop-reposition/drag-drop-reposition.component';
+import { ResizableDraggableComponent } from './resizable-draggable/resizable-draggable.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DragDropRepositionDirective } from './drag-drop-reposition/drag-drop-re
     StatBlockComponent,
     BaseCharacterComponent,
     ClassBlockComponent,
-    DragDropRepositionDirective
+    DragDropRepositionDirective,
+    ResizableDraggableComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { DragDropRepositionDirective } from './drag-drop-reposition/drag-drop-re
   providers: [],
   bootstrap: [AppComponent],
   exports: [
-    DragDropRepositionDirective
+    DragDropRepositionDirective,
+    ResizableDraggableComponent
   ]
 })
 export class AppModule { }

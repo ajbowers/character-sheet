@@ -20,7 +20,5 @@ export class AbilityTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  dragEnd(event: CdkDragEnd) {
-    this.characterService.dragEnd(event);
-  }
+
 }

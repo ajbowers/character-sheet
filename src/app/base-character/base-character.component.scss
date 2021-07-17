@@ -1,4 +1,6 @@
 .component {
+  position: relative;
+  display: flexbox;
   color:rgb(182, 191, 200);
   padding: 10px;
   min-width: 200px;
@@ -6,9 +8,5 @@
 
 .component:hover {
   border: solid 1px rgb(182, 191, 200);
-  background-color:black;
-}
-
-#generalBlock {
-  width:250px;
+  background-color:gray;
 }

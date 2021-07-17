@@ -17,9 +17,7 @@ export class StatBlockComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  dragEnd(event: CdkDragEnd) {
-    this.characterService.dragEnd(event);
-  }
+
 
   calcMod(stat: number) {
     let result;

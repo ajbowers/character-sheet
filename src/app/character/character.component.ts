@@ -13,7 +13,7 @@ import { StatBlock } from '../models/statblock';
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',
-  styleUrls: ['./character.component.css']
+  styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
   character!: Character;
@@ -21,6 +21,10 @@ export class CharacterComponent implements OnInit {
 
   ngOnInit(): void {
     this.character = this.createCharacter();
+  }
+
+  getComponentAppString(appSelector: string) {
+    return appSelector;
   }
 
   compileItems(character: Character) {
@@ -84,7 +88,7 @@ export class CharacterComponent implements OnInit {
 
     let proficiencies: Skill[] = [];
     let items: Item[] = [];
-    let spells: Spell[] = [];
+
     let savingThrows: string[] = [];
 
     let classItems = [
@@ -105,17 +109,21 @@ export class CharacterComponent implements OnInit {
       new Ability("Infuse Item", 2, "Gain the ability to learn infusions. 4 immediately. See Infusion table for those known & the rules"),
       new Ability("ALCH: Experimental Elixers", 3, "After completing a long rest, roll 1d6 and refer to elixer table. Create elixer based on result of dice. Consume spell slots to make additional elixers."),
       new Ability("ALCH: Alchemical Savant", 5, "When using alchemist supplies to cast spells, add INT bonus to any rolls that heal or deal damage via acid, fire, necrotic or poison")
-    ]
+    ];
 
     let classes = [
       new Class("Artificer", "Alchemist", "1d8", ["INT", "CON"], classItems, classSkills, features)
-    ]
+    ];
+
+    let spells = [
+      new Spell("Test Spell", "Abjuration", "Cast spell at target", ["V","S","M"], "")
+    ];
 
     let racials = [
       new Ability("Vedalken Dispassion", 0, "Advantage on ST for INT, WIS and CHA"),
       new Ability("Tireless Precision", 0, "Gain Proficiency with Medicine, Theives' Tools. Add 1d4 to rolls with this tools"),
       new Ability("Partially Amphibious", 0, "Can breath underwater for 1 hour, once per long rest")
-    ]
+    ];
 
     let backstory = "Gillbert Dorado, known as Gill by his friends & associates, is a brillient vedalken alchemist who wastes his time searching out and studying paranormal activity in the various locales of [setting]. Gill takes meticulous care in being" +
                     "prepared for any scenario; his armor is covered in pouches, straps, clips and other utility features. He carries some advanced alchemical tools and many flasks with mysterious liquid. He is roughly 6ft tall and wears night vision goggles";

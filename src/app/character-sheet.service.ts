@@ -8,12 +8,12 @@ export class CharacterSheetService {
 
   constructor() { }
 
-  dragEnd(event: CdkDragEnd) {
+  dragEnd(event: CdkDragEnd, selector: string) {
     let positionStorage = window.localStorage;
     let ele = event.source.element.nativeElement;
     let left = ele.getBoundingClientRect().left;
     let top  = ele.getBoundingClientRect().top;
-    positionStorage.setItem(ele.id + "PosLeft", left.toString());
-    positionStorage.setItem(ele.id + "PosTop", top.toString());
+    positionStorage.setItem(selector + "PosLeft", left.toString());
+    positionStorage.setItem(selector + "PosTop", top.toString());
   }
 }

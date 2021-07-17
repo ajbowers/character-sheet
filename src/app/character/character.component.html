@@ -1,4 +1,4 @@
-<div class="character-sheet">
+<div class="character-sheet box-container">
   <div class="save-position-button" style="float: right; padding-right: 15px; padding-top: 15px">
     <div (click)="saveAllComponentPosition()">
       SAVE
@@ -9,11 +9,13 @@
       RESET
     </div>
   </div>
-  <app-base-character class="component" [character]="character"></app-base-character>
+
+  <app-resizable-draggable [width]="250" [height]="250" [left]="100" [top]="100" [character]="character" [selector]="getComponentAppString('app-base-character')">
+  </app-resizable-draggable>
+
+  <!--<app-base-character class="component" [character]="character"></app-base-character>
   <app-stat-block     class="component" [statBlock]="character.coreStats"></app-stat-block>
   <app-class-block    class="component" [character]="character"></app-class-block>
   <app-item-table     class="component" [items]="compileItems(character)"></app-item-table>
-  <app-ability-table  class="component" [features]="compileFeatures(character)"></app-ability-table>
+  <app-ability-table  class="component" [features]="compileFeatures(character)"></app-ability-table> -->
 </div>
-
-
