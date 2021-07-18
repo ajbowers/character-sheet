@@ -20,9 +20,9 @@ const enum Status {
 })
 export class BaseCharacterComponent implements OnInit {
 
-  @Input() character: Character = new Character("", "", "", "", 0, [], [], new StatBlock(0, 0, 0, 0, 0, 0), 0, 0, [], [], []);
-  @Input() width!: number;
+  @Input() character!: Character;
   @Input() height!: number;
+  @Input() width!: number;
   constructor(private characterService: CharacterSheetService) { }
 
   ngOnInit(): void {

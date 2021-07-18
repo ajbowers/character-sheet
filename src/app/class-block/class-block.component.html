@@ -1,4 +1,17 @@
-<div id="classBlock" *ngFor="let class of character.classes">
-  <h4> - {{class.subclassName}} - </h4>
-  <p> Hit Die: {{class.hitDie}}</p>
+<div id="classBlock" class="component" *ngFor="let class of character.classes">
+  <div  class="classDetail">
+  <h3> Level {{character.level}} {{class.subclassName}}</h3>
+  <h3>Hit Die: {{class.hitDie}}</h3>
+  </div>
+  <table>
+    <tr>
+      <th colspan="1">HP</th>
+      <th></th>
+      <th colspan="1">MAX</th>
+    </tr>
+    <tr>
+      <td>{{character.hitPointsCurrent}}</td><td>/</td><td>{{character.hitPointsMax}}</td>
+    </tr>
+  </table>
 </div>
+

@@ -1,14 +1,20 @@
-.classes {
-  width: 250px;
-  padding: 5px;
-}
-
 .component {
-
-  color:rgb(182, 191, 200);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
-.component:hover {
-  border: solid 1px rgb(182, 191, 200);
-  background-color:black;
+th {
+  text-align: center;
+  font-size: larger;
+}
+
+td {
+  font-size: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.classDetail {
+  text-align: center;
 }

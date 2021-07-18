@@ -5,7 +5,6 @@
   [style.transform]="'translate3d('+ left + 'px,' + top + 'px,' + '0px)'"
   [class.active]="status === 1 || status === 2"
   (window:mouseup)="setStatus($event, 0)">
-  {{width}} x {{height}}
   <h2 [style.padding-left.px]="5" cdkDragHandle>[ {{header}} ] </h2>
 
     <div *ngIf="selector == 'app-base-character'">
@@ -22,6 +21,9 @@
     </div>
     <div *ngIf="selector == 'app-ability-table'">
       <app-ability-table [width]="width" [height]="height" [character]='character'></app-ability-table>
+    </div>
+    <div *ngIf="selector == 'app-skills-block'">
+      <app-skills-block [width]="width" [height]="height" [character]='character'></app-skills-block>
     </div>
 
     <div class="resize-action" (mousedown)="setStatus($event, 1)"></div>

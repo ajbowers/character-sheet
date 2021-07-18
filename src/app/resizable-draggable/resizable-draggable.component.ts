@@ -37,26 +37,21 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
   @Input('header') public header!: string;
 
   constructor(private element: ElementRef,
-              private characterService: CharacterSheetService,
-              private changeDetectorRef: ChangeDetectorRef){}
+              private characterService: CharacterSheetService){}
 
   ngOnInit() {
-
-
   }
 
   ngAfterViewInit(){
     this.loadBox();
     this.loadContainer();
-
-    let grip = this.element.nativeElement.firstChild.lastChild;
-    this.loadComponentLocation(grip);
+    this.loadComponentLocation();
   }
 
-  loadComponentLocation(gripElement: ElementRef) {
+  loadComponentLocation() {
 
-    let componentX = 0;
-    let componentY = 0;
+    let leftOffset = 0;
+    let topOffset = 0;
     let height = 0;
     let width = 0;
     let components = characterJSON["components"];
@@ -64,20 +59,19 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
     for (let i = 0; i < components.length; i++) {
       let _name = components[i]["component-name"];
       if (_name === this.selector) {
-        componentX = components[i]["xPos"];
-        componentY = components[i]["yPos"];
+        leftOffset = components[i]["left"];
+        topOffset = components[i]["top"];
         height = components[i]["height"];
         width = components[i]["width"];
       }
     }
 
     // set new X,Y Coords for this component
-    this.element.nativeElement.style.left     = componentX +'px';
-    this.element.nativeElement.style.top      = componentY +'px';
+    this.element.nativeElement.style.position = "absolute";
+    this.element.nativeElement.style.left     = leftOffset +'px';
+    this.element.nativeElement.style.top      = topOffset +'px';
     this.element.nativeElement.style.height   = height + 'px';
     this.element.nativeElement.style.width    = width + 'px';
-
-
   }
 
   private loadBox(){
@@ -88,8 +82,16 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
   private loadContainer(){
     const left = this.boxPosition.left - this.left;
     const top = this.boxPosition.top - this.top;
-    const right = left + 1060;
-    const bottom = top + 1920;
+    let right = left + 1060;
+    let bottom = top + 1920;
+    if(window.innerHeight > window.innerWidth){
+      right = left + 1080;
+      bottom = top + 1920;
+    } else {
+      right = left + 2560;
+      bottom = top + 1080;
+    }
+
     this.containerPos = { left, top, right, bottom };
   }
 

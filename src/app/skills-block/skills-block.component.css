@@ -1,0 +1,17 @@
+th {
+  text-align: center;
+}
+
+td, th {
+  width:auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.prof {
+  color: green;
+}

@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ClassBlockComponent } from './class-block/class-block.component';
 import { ResizableDraggableComponent } from './resizable-draggable/resizable-draggable.component';
+import { SkillsBlockComponent } from './skills-block/skills-block.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ResizableDraggableComponent } from './resizable-draggable/resizable-dra
     StatBlockComponent,
     BaseCharacterComponent,
     ClassBlockComponent,
-    ResizableDraggableComponent
+    ResizableDraggableComponent,
+    SkillsBlockComponent
   ],
   imports: [
     BrowserModule,

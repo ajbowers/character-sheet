@@ -1,11 +1,11 @@
 .resizable-draggable {
+  border: solid 1px rgb(182, 191, 200);
+      background-color: rgba(0, 0, 0, 75%);
   &:hover {
       cursor: all-scroll;
-      border: solid 1px rgb(182, 191, 200);
-      background-color: rgba(0, 0, 0, 75%);
+
   }
 }
-
 .resize-action {
   position: absolute;
   left: 100%;
@@ -16,7 +16,4 @@
   &:hover {
       cursor: nwse-resize;
   }
-}
-
-.component {
 }

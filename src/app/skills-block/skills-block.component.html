@@ -1,0 +1,26 @@
+<div id="statBlock">
+  <table>
+    <tr>
+      <th colspan="1">SKILL</th>
+      <th></th>
+      <th colspan="1">MOD</th>
+      <th></th>
+      <th colspan="1">ST</th>
+    </tr>
+    <tr *ngFor="let skill of skillArray">
+      <td>{{skill.split(":")[0]}}</td>
+      <td></td>
+      <td class="centerText" >
+
+        <span *ngIf="isProficient(skill) else nonProf">
+          <span class="prof"><span *ngIf="calcMod(skill) > 0">+</span>{{calcMod(skill)}}</span>
+        </span>
+        <ng-template #nonProf>
+          <span class="nonProf"><span *ngIf="calcMod(skill) > 0">+</span>{{calcMod(skill)}}</span>
+        </ng-template>
+      </td>
+      <td></td>
+      <td>{{showCheck(skill.split(":")[0])}}</td>
+    </tr>
+  </table>
+</div>

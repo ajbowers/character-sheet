@@ -1,6 +1,5 @@
 import { Ability } from "./ability";
 import { Item } from "./item";
-import { Skill } from "./skill";
 
 
 export class Class {
@@ -9,10 +8,10 @@ export class Class {
   hitDie: string = "";
   savingThrows: string[] = [];
   classItems: Item[] = [];
-  skills: Skill[] = [];
+  skills: string[] = [];
   classAbilities: Ability[] = [];
 
-  constructor(className: string, subclassName: string, hitDie: string, savingThrows: string[], classItems: Item[], skills: Skill[], classAbilities: Ability[]) {
+  constructor(className: string, subclassName: string, hitDie: string, savingThrows: string[], classItems: Item[], skills: string[], classAbilities: Ability[]) {
     this.className = className;
     this.subclassName = subclassName;
     this.hitDie = hitDie;

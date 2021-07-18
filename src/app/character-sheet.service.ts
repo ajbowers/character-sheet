@@ -16,4 +16,24 @@ export class CharacterSheetService {
     positionStorage.setItem(selector + "PosLeft", left.toString());
     positionStorage.setItem(selector + "PosTop", top.toString());
   }
+
+  calcProficiency(level: number) {
+    if (level < 5) {
+      return 2;
+    } else if (level < 9) {
+      return 3;
+    } else if (level < 13) {
+      return 4;
+    } else if (level < 17) {
+      return 5;
+    } else {
+      return 6;
+    }
+  }
+
+  calcStatBonus(stat: number) {
+    let result;
+    result = (stat-10)/2;
+    return result;
+  }
 }

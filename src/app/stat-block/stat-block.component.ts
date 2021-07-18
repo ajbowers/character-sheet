@@ -49,7 +49,7 @@ export class StatBlockComponent implements OnInit {
 
   calcMod(stat: number) {
     let result;
-    result = (stat-10)/2;
+    result = this.characterService.calcStatBonus(stat);
     if (result >= 0) {
       result = "+" + result;
     }

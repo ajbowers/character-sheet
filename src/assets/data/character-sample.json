@@ -1,5 +1,6 @@
 {
   "name": "Gill Dorado",
+  "level": 5,
   "background": "Gillbert Dorado, known as Gill by his friends & associates, is a brillient vedalken alchemist who wastes his time searching out and studying paranormal activity in the various locales of [setting]. Gill takes meticulous care in being prepared for any scenario; his armor is covered in pouches, straps, clips and other utility features. He carries some advanced alchemical tools and many flasks with mysterious liquid. He is roughly 6ft tall and wears night vision goggles",
   "alignment": "Lawful Neutral",
   "race": {
@@ -32,7 +33,7 @@
           "dexterity": "",
           "constitution": "*",
           "intelligence": "*",
-          "wisdom": "",
+          "wisdom": "*",
           "charisma": ""
         }
       ],
@@ -177,80 +178,64 @@
     }
   ],
   "skills": [
-    {
-      "acrobatics": "",
-      "animal-handling": "",
-      "arcana": "",
-      "athletics": "",
-      "deception": "",
-      "history": "",
-      "insight": "",
-      "intimidation": "",
-      "investigation": "",
-      "medicine": "",
-      "nature": "",
-      "perception": "",
-      "persuasion": "",
-      "religion": "",
-      "sleight-of-hand": "",
-      "stealth": "",
-      "survival": ""
-    }
+      "investigation",
+      "history",
+      "medicine"
   ],
   "components": [
     {
       "component-name": "app-base-character",
-      "xPos": 400,
-      "yPos": 100,
+      "left": 770,
+      "top": 260,
       "width": 300,
-      "height": 600
+      "height": 200
     },
     {
       "component-name": "app-ability-table",
-      "xPos": 0,
-      "yPos": 0,
+      "left": 20,
+      "top": 980,
       "width": 200,
       "height": 400
     },
     {
       "component-name": "app-item-table",
-      "xPos": 0,
-      "yPos": 0,
+      "left": 20,
+      "top": 1400,
       "width": 200,
       "height": 400
     },
     {
       "component-name": "app-class-block",
-      "xPos": 0,
-      "yPos": 0,
+      "left": 770,
+      "top": 10,
       "width": 200,
-      "height": 400
+      "height": 150
     },
     {
       "component-name": "app-stat-block",
-      "xPos": 0,
-      "yPos": 0,
+      "left": 500,
+      "top": 10,
       "width": 200,
       "height": 400
     },
     {
       "component-name": "app-skill-table",
-      "xPos": 0,
-      "yPos": 0,
+      "left": 500,
+      "top": 0,
       "width": 200,
       "height": 400
     },
     {
       "component-name": "app-spell-table",
-      "xPos": 0,
-      "yPos": 0,
+      "left": 0,
+      "top": 0,
       "width": 200,
       "height": 400
     },
     {
       "component-name": "app-class-table",
-      "xPos": 0,
-      "yPos": 0,
+      "left": 0,
+      "top": 0,
       "width": 200,
       "height": 400
     }

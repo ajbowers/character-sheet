@@ -27,11 +27,9 @@ export class AbilityTableComponent implements OnInit {
 
   compileFeatures() {
     let _features: Ability[] = [];
-    _features.push(new Ability("  [ Race ]", 0, " "));
     this.character.racialAbilities.forEach(_racial => {
       _features.push(_racial);
     })
-    _features.push(new Ability("  [ Class ]", 0, " "));
     this.character.classes.forEach(_class => {
       _class.classAbilities.forEach(_feature => {
         _features.push(_feature);
