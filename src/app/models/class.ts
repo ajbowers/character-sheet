@@ -4,20 +4,20 @@ import { Skill } from "./skill";
 
 
 export class Class {
-  name: string = "";
-  subclass: string = "";
-  hitDice: string = "";
+  className: string = "";
+  subclassName: string = "";
+  hitDie: string = "";
   savingThrows: string[] = [];
-  startingItems: Item[] = [];
+  classItems: Item[] = [];
   skills: Skill[] = [];
   classAbilities: Ability[] = [];
 
-  constructor(name: string, subclass: string, hitDice: string, savingThrows: string[], startingItems: Item[], skills: Skill[], classAbilities: Ability[]) {
-    this.name = name;
-    this.subclass = subclass;
-    this.hitDice = hitDice;
+  constructor(className: string, subclassName: string, hitDie: string, savingThrows: string[], classItems: Item[], skills: Skill[], classAbilities: Ability[]) {
+    this.className = className;
+    this.subclassName = subclassName;
+    this.hitDie = hitDie;
     this.savingThrows = savingThrows;
-    this.startingItems = startingItems;
+    this.classItems = classItems;
     this.skills = skills;
     this.classAbilities = classAbilities;
   }

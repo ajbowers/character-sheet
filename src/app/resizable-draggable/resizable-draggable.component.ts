@@ -1,8 +1,8 @@
 import { Character } from './../models/character';
-import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostListener, ChangeDetectorRef } from '@angular/core';
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { CharacterSheetService } from '../character-sheet.service';
-
+import characterJSON from '../../assets/data/character-sample.json';
 const enum Status {
   OFF = 0,
   RESIZE = 1,
@@ -25,6 +25,7 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
   public top!: number;
   @ViewChild("box")
   public box!: ElementRef;
+
   private boxPosition!: { left: number; top: number; };
   private containerPos!: { left: number; top: number; right: number; bottom: number; };
   public mouse!: { x: number; y: number; };
@@ -33,14 +34,50 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
 
   @Input('selector') public selector!: string;
   @Input('character') public character!: Character;
+  @Input('header') public header!: string;
 
-  constructor(private characterService: CharacterSheetService){}
+  constructor(private element: ElementRef,
+              private characterService: CharacterSheetService,
+              private changeDetectorRef: ChangeDetectorRef){}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+
+  }
 
   ngAfterViewInit(){
     this.loadBox();
     this.loadContainer();
+
+    let grip = this.element.nativeElement.firstChild.lastChild;
+    this.loadComponentLocation(grip);
+  }
+
+  loadComponentLocation(gripElement: ElementRef) {
+
+    let componentX = 0;
+    let componentY = 0;
+    let height = 0;
+    let width = 0;
+    let components = characterJSON["components"];
+
+    for (let i = 0; i < components.length; i++) {
+      let _name = components[i]["component-name"];
+      if (_name === this.selector) {
+        componentX = components[i]["xPos"];
+        componentY = components[i]["yPos"];
+        height = components[i]["height"];
+        width = components[i]["width"];
+      }
+    }
+
+    // set new X,Y Coords for this component
+    this.element.nativeElement.style.left     = componentX +'px';
+    this.element.nativeElement.style.top      = componentY +'px';
+    this.element.nativeElement.style.height   = height + 'px';
+    this.element.nativeElement.style.width    = width + 'px';
+
+
   }
 
   private loadBox(){

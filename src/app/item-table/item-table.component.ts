@@ -1,6 +1,7 @@
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { CharacterSheetService } from '../character-sheet.service';
+import { Character } from '../models/character';
 import { Item } from '../models/item';
 
 @Component({
@@ -12,12 +13,15 @@ import { Item } from '../models/item';
 export class ItemTableComponent implements OnInit {
 
   @Input() items: Item[] = [];
-
+  @Input() character!: Character;
+  @Input() width!: number;
+  @Input() height!: number;
   constructor(
     private characterService: CharacterSheetService
   ) { }
 
   ngOnInit(): void {
+    this.items = this.character.inventory;
   }
 
 

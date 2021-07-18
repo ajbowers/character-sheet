@@ -1,40 +1,28 @@
-<div id="statBlock" class="core stats component" cdkDrag dragAndDropReposition >
-  <div>
-    <div class="example-handle" cdkDragHandle>
-      <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
-        </path>
-        <path d="M0 0h24v24H0z" fill="none"></path>
-      </svg>
-    </div>
-  </div>
+<div id="statBlock">
   <table>
-    <tr>
-      <td colspan="3"><h3>[ Core Stats ]</h3></td>
-    </tr>
     <tr>
       <th colspan="1"></th>
       <th></th>
       <th colspan="1">Mod</th>
+      <th colspan="1">ST</th>
     </tr>
     <tr>
-      <td>STR:</td><td>{{statBlock.strength}}</td><td>{{calcMod(statBlock.strength)}}</td>
+      <td>STR:</td><td>{{character.coreStats.strength}}</td><td>{{calcMod(character.coreStats.strength)}}</td><td>{{str}}</td>
     </tr>
     <tr>
-      <td>DEX:</td><td>{{statBlock.dexterity}}</td><td>{{calcMod(statBlock.dexterity)}}</td>
+      <td>DEX:</td><td>{{character.coreStats.dexterity}}</td><td>{{calcMod(character.coreStats.dexterity)}}</td><td>{{dex}}</td>
     </tr>
     <tr>
-      <td>CON:</td><td>{{statBlock.constitution}}</td><td>{{calcMod(statBlock.constitution)}}</td>
+      <td>CON:</td><td>{{character.coreStats.constitution}}</td><td>{{calcMod(character.coreStats.constitution)}}</td><td>{{con}}</td>
     </tr>
     <tr>
-      <td>INT:</td><td>{{statBlock.intelligence}}</td><td>{{calcMod(statBlock.intelligence)}}</td>
+      <td>INT:</td><td>{{character.coreStats.intelligence}}</td><td>{{calcMod(character.coreStats.intelligence)}}</td><td>{{int}}</td>
     </tr>
     <tr>
-      <td>WIS:</td><td>{{statBlock.wisdom}}</td><td>{{calcMod(statBlock.wisdom)}}</td>
+      <td>WIS:</td><td>{{character.coreStats.wisdom}}</td><td>{{calcMod(character.coreStats.wisdom)}}</td><td>{{wis}}</td>
     </tr>
     <tr>
-      <td>CHA:</td><td>{{statBlock.charisma}}</td><td>{{calcMod(statBlock.charisma)}}</td>
+      <td>CHA:</td><td>{{character.coreStats.charisma}}</td><td>{{calcMod(character.coreStats.charisma)}}</td><td>{{cha}}</td>
     </tr>
   </table>
 </div>

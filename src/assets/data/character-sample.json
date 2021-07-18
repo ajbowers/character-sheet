@@ -1,58 +1,258 @@
 {
-  "name": "",
-  "background": [],
-  "alignment": "",
-  "race": "",
-  "age": "",
-  "classes": [],
-  "racial-abilities": [],
-  "class-abilities": [],
-  "core-stats": [
+  "name": "Gill Dorado",
+  "background": "Gillbert Dorado, known as Gill by his friends & associates, is a brillient vedalken alchemist who wastes his time searching out and studying paranormal activity in the various locales of [setting]. Gill takes meticulous care in being prepared for any scenario; his armor is covered in pouches, straps, clips and other utility features. He carries some advanced alchemical tools and many flasks with mysterious liquid. He is roughly 6ft tall and wears night vision goggles",
+  "alignment": "Lawful Neutral",
+  "race": {
+    "raceName":"Vedalken",
+    "racialAbilities": [{
+      "name": "Vedalken Dispassion",
+      "levelReq": "",
+      "description": "Advantage on ST for INT, WIS and CHA"
+    },
     {
-      "strength":"",
-      "dexterity": "",
-      "constitution":"",
-      "intelligence": "",
-      "wisdom": "",
-      "charisma": ""
+      "name": "Tireless Precision",
+      "levelReq": "",
+      "description": "Gain Proficiency with Medicine, Theives' Tools. Add 1d4 to rolls with this tools"
+    },
+    {
+      "name": "Partially Amphibious",
+      "levelReq": "",
+      "description": "Can breath underwater for 1 hour, once per long rest"
+    }]}
+  ,
+  "age": "167",
+  "classes": [
+    {
+      "className": "Artificer",
+      "subclassName": "Alchemist",
+      "hitDie": "1d8",
+      "savingThrows": [
+        {
+          "strength": "",
+          "dexterity": "",
+          "constitution": "*",
+          "intelligence": "*",
+          "wisdom": "",
+          "charisma": ""
+        }
+      ],
+      "classItems": [
+        {
+          "name": "Spear",
+          "damage": "1d6, 1d8vers",
+          "range": "20",
+          "description": "simple, thrown",
+          "value": "5gp",
+          "isMagical": "false",
+          "armorClass": "0",
+          "note": ""
+        },
+        {
+          "name": "Scale Mail",
+          "damage": "",
+          "range": "0",
+          "description": "",
+          "value": "5gp",
+          "isMagical": "false",
+          "armorClass": "14",
+          "note": "covered in pockets for potions, tools, gadgets etc"
+        },
+        {
+          "name": "Goggles of Night",
+          "damage": "",
+          "range": "0",
+          "description": "60ft Darkvision while equipped",
+          "value": "5gp",
+          "isMagical": "true",
+          "armorClass": "0",
+          "note": "wonderous item, made with Artificer's Replicate infusion"
+        },
+        {
+          "name": "Rope of Climbing",
+          "damage": "",
+          "range": "0",
+          "description": "",
+          "value": "5gp",
+          "isMagical": "true",
+          "armorClass": "0",
+          "note": "wonderous item, made with Artificer's Replicate infusion"
+        }
+      ],
+      "classAbilities": [
+        {
+          "name": "Magical Tinkering",
+          "levelReq": "1",
+          "description": "Make Fart Rocks and Other Cool Stuff"
+        },
+        {
+          "name": "Spellcasting",
+          "levelReq": "1",
+          "description": "See Spell page, must use Artificer's or Theives' Tools"
+        },
+        {
+          "name": "Infuse Item",
+          "levelReq": "2",
+          "description": "Gain the ability to learn infusions. 4 immediately. See Infusion table for those known & the rules"
+        },
+        {
+          "name": "ALCH: Experimental Elixers",
+          "levelReq": "3",
+          "description": "After completing a long rest, roll 1d6 and refer to elixer table. Create elixer based on result of dice. Consume spell slots to make additional elixers."
+        },
+        {
+          "name": "ALCH: Alchemical Savant",
+          "levelReq": "5",
+          "description": "When using alchemist supplies to cast spells, add INT bonus to any rolls that heal or deal damage via acid, fire, necrotic or poison"
+        }
+      ]
     }
   ],
-  "hit-points-cur": "",
-  "hit-points-max": "",
-  "proficiency": "",
-  "inventory": [
+  "coreStats": [
     {
-      "weapons": [],
-      "armor": [],
-      "items": []
+      "strength": "10",
+      "dexterity": "14",
+      "constitution": "14",
+      "intelligence": "16",
+      "wisdom": "12",
+      "charisma": "8"
     }
   ],
+  "hitPointsCur": "45",
+  "hitPointsMax": "45",
+  "proficiency": "3",
   "spells": [
     {
-      "name":"",
-      "range": "",
-      "description": "",
-      "components": []
+      "name": "Test Spell",
+      "range": "Abjuration",
+      "description": "Cast spell at target",
+      "components": [
+        {
+          "visual": "true",
+          "somatic": "true",
+          "material": "true"
+        }
+      ]
     }
   ],
-  "saving-throws":[],
-  "skills": [{
-    "acrobatics":"",
-    "animal-handling":"",
-    "arcana":"",
-    "athletics":"",
-    "deception":"",
-    "history":"",
-    "insight":"",
-    "intimidation":"",
-    "investigation":"",
-    "medicine":"",
-    "nature":"",
-    "perception":"",
-    "persuasion":"",
-    "religion":"",
-    "sleight-of-hand":"",
-    "stealth":"",
-    "survival": ""
-  }]
+  "items": [
+    {
+      "name": "Spear",
+      "damage": "1d6, 1d8vers",
+      "range": "20",
+      "description": "simple, thrown",
+      "value": "5gp",
+      "isMagical": "false",
+      "armorClass": "0",
+      "note": ""
+    },
+    {
+      "name": "Scale Mail",
+      "damage": "",
+      "range": "0",
+      "description": "",
+      "value": "5gp",
+      "isMagical": "false",
+      "armorClass": "14",
+      "note": "covered in pockets for potions, tools, gadgets etc"
+    },
+    {
+      "name": "Goggles of Night",
+      "damage": "",
+      "range": "0",
+      "description": "60ft Darkvision while equipped",
+      "value": "5gp",
+      "isMagical": "true",
+      "armorClass": "0",
+      "note": "wonderous item, made with Artificer's Replicate infusion"
+    },
+    {
+      "name": "Rope of Climbing",
+      "damage": "",
+      "range": "0",
+      "description": "",
+      "value": "5gp",
+      "isMagical": "true",
+      "armorClass": "0",
+      "note": "wonderous item, made with Artificer's Replicate infusion"
+    }
+  ],
+  "skills": [
+    {
+      "acrobatics": "",
+      "animal-handling": "",
+      "arcana": "",
+      "athletics": "",
+      "deception": "",
+      "history": "",
+      "insight": "",
+      "intimidation": "",
+      "investigation": "",
+      "medicine": "",
+      "nature": "",
+      "perception": "",
+      "persuasion": "",
+      "religion": "",
+      "sleight-of-hand": "",
+      "stealth": "",
+      "survival": ""
+    }
+  ],
+  "components": [
+    {
+      "component-name": "app-base-character",
+      "xPos": 400,
+      "yPos": 100,
+      "width": 300,
+      "height": 600
+    },
+    {
+      "component-name": "app-ability-table",
+      "xPos": 0,
+      "yPos": 0,
+      "width": 200,
+      "height": 400
+    },
+    {
+      "component-name": "app-item-table",
+      "xPos": 0,
+      "yPos": 0,
+      "width": 200,
+      "height": 400
+    },
+    {
+      "component-name": "app-class-block",
+      "xPos": 0,
+      "yPos": 0,
+      "width": 200,
+      "height": 400
+    },
+    {
+      "component-name": "app-stat-block",
+      "xPos": 0,
+      "yPos": 0,
+      "width": 200,
+      "height": 400
+    },
+    {
+      "component-name": "app-skill-table",
+      "xPos": 0,
+      "yPos": 0,
+      "width": 200,
+      "height": 400
+    },
+    {
+      "component-name": "app-spell-table",
+      "xPos": 0,
+      "yPos": 0,
+      "width": 200,
+      "height": 400
+    },
+    {
+      "component-name": "app-class-table",
+      "xPos": 0,
+      "yPos": 0,
+      "width": 200,
+      "height": 400
+    }
+  ]
 }

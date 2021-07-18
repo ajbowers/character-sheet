@@ -2,6 +2,7 @@ import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { CharacterSheetService } from '../character-sheet.service';
 import { Ability } from '../models/ability';
+import { Character } from '../models/character';
 
 @Component({
   selector: 'app-ability-table',
@@ -12,12 +13,32 @@ import { Ability } from '../models/ability';
 export class AbilityTableComponent implements OnInit {
 
   @Input() features: Ability[] = [];
+  @Input() character!: Character;
+  @Input() width!: number;
+  @Input() height!: number;
 
   constructor(
     private characterService: CharacterSheetService
   ) { }
 
   ngOnInit(): void {
+
+  }
+
+  compileFeatures() {
+    let _features: Ability[] = [];
+    _features.push(new Ability("  [ Race ]", 0, " "));
+    this.character.racialAbilities.forEach(_racial => {
+      _features.push(_racial);
+    })
+    _features.push(new Ability("  [ Class ]", 0, " "));
+    this.character.classes.forEach(_class => {
+      _class.classAbilities.forEach(_feature => {
+        _features.push(_feature);
+      })
+    })
+
+    return _features;
   }
 
 

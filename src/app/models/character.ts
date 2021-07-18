@@ -19,10 +19,9 @@ export class Character {
   proficiencies: Skill[] = [];
   inventory: Item[] = [];
   spells: Spell[] = [];
-  savingThrows: string[] = [];
 
-  constructor(name: string, background: string, alignment: string, race: string, age: number, classes: Class[], racialAbilities: Ability[], classAbilities: Ability[], coreStats: StatBlock,
-              hitPointsCurrent: number, hitPointsMax: number, proficiencies: Skill[], inventory: Item[], spells: Spell[], savingThrows: string[] ) {
+  constructor(name: string, background: string, alignment: string, race: string, age: number, classes: Class[], racialAbilities: Ability[], coreStats: StatBlock,
+              hitPointsCurrent: number, hitPointsMax: number, proficiencies: Skill[], inventory: Item[], spells: Spell[]) {
     this.name = name;
     this.background = background
     this.alignment = alignment;
@@ -37,6 +36,5 @@ export class Character {
     this.proficiencies = proficiencies;
     this.inventory = inventory;
     this.spells = spells;
-    this.savingThrows = savingThrows;
   }
 }

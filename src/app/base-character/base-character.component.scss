@@ -1,12 +1,6 @@
 .component {
-  position: relative;
-  display: flexbox;
-  color:rgb(182, 191, 200);
-  padding: 10px;
-  min-width: 200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
-.component:hover {
-  border: solid 1px rgb(182, 191, 200);
-  background-color:gray;
-}

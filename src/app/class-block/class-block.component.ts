@@ -13,12 +13,14 @@ import { CdkDragEnd } from '@angular/cdk/drag-drop';
 })
 export class ClassBlockComponent implements OnInit {
 
-  @Input() character: Character = new Character("", "", "","",0,[],[],[],new StatBlock(0,0,0,0,0,0), 0, 0, [], [], [], []);
+  @Input() character!: Character;
+  @Input() width!: number;
+  @Input() height!: number;
+  savingThrows!: string[];
   constructor(
     private characterService: CharacterSheetService
   ) { }
 
   ngOnInit(): void {
   }
-
 }

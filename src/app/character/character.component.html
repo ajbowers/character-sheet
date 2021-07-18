@@ -10,12 +10,48 @@
     </div>
   </div>
 
-  <app-resizable-draggable [width]="250" [height]="250" [left]="100" [top]="100" [character]="character" [selector]="getComponentAppString('app-base-character')">
+  <app-resizable-draggable
+  [width]="250" [height]="250" [left]="0" [top]="0"
+  [header]="'Background'"
+  [character]="character"
+  [selector]="'app-base-character'">
   </app-resizable-draggable>
+
+  <app-resizable-draggable
+  [width]="250" [height]="250" [left]="0" [top]="0"
+  [header]="'Core Stats'"
+  [character]="character"
+  [selector]="'app-stat-block'">
+  </app-resizable-draggable>
+
+  <app-resizable-draggable
+  [width]="250" [height]="250" [left]="0" [top]="0"
+  [header]="'Class'"
+  [character]="character"
+  [selector]="'app-class-block'">
+  </app-resizable-draggable>
+
+  <app-resizable-draggable
+  [width]="1050" [height]="300" [left]="0" [top]="0"
+  [header]="'Items'"
+  [character]="character"
+  [selector]="'app-item-table'">
+  </app-resizable-draggable>
+
+  <app-resizable-draggable
+  [width]="1050" [height]="500" [left]="0" [top]="0"
+  [header]="'Features'"
+  [character]="character"
+  [selector]="'app-ability-table'">
+  </app-resizable-draggable>
+
 
   <!--<app-base-character class="component" [character]="character"></app-base-character>
   <app-stat-block     class="component" [statBlock]="character.coreStats"></app-stat-block>
   <app-class-block    class="component" [character]="character"></app-class-block>
   <app-item-table     class="component" [items]="compileItems(character)"></app-item-table>
   <app-ability-table  class="component" [features]="compileFeatures(character)"></app-ability-table> -->
+
+
+
 </div>
