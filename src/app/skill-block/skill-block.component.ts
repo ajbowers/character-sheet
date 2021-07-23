@@ -6,12 +6,12 @@ import { Character } from '../models/character';
 import { StatBlock } from '../models/statblock';
 
 @Component({
-  selector: 'app-skills-block',
-  templateUrl: './skills-block.component.html',
-  styleUrls: ['./skills-block.component.css'],
+  selector: 'app-skill-block',
+  templateUrl: './skill-block.component.html',
+  styleUrls: ['./skill-block.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SkillsBlockComponent implements OnInit {
+export class SkillBlockComponent implements OnInit {
 
   @Input('statBlock') statBlock:StatBlock = new StatBlock(8, 8, 8, 8, 8, 8);
   @Input() character!: Character;

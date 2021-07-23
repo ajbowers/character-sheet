@@ -1,5 +1,7 @@
+import { Component } from '@angular/core';
 import { Ability } from "./ability";
 import { Class } from "./class";
+import { ComponentLoc } from "./componentLoc";
 import { Item } from "./item";
 import { Spell } from "./spell";
 import { StatBlock } from "./statblock";
@@ -19,9 +21,10 @@ export class Character {
   proficiencies: string[] = [];
   inventory: Item[] = [];
   spells: Spell[] = [];
+  components: ComponentLoc[] = [];
 
   constructor(name: string, level: number, background: string, alignment: string, race: string, age: number, classes: Class[], racialAbilities: Ability[], coreStats: StatBlock,
-              hitPointsCurrent: number, hitPointsMax: number, proficiencies: string[], inventory: Item[], spells: Spell[]) {
+              hitPointsCurrent: number, hitPointsMax: number, proficiencies: string[], inventory: Item[], spells: Spell[], components: ComponentLoc[]) {
     this.name = name;
     this.level = level;
     this.background = background
@@ -37,5 +40,6 @@ export class Character {
     this.proficiencies = proficiencies;
     this.inventory = inventory;
     this.spells = spells;
+    this.components = components;
   }
 }

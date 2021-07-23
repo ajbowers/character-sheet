@@ -38,6 +38,4 @@ export class AbilityTableComponent implements OnInit {
 
     return _features;
   }
-
-
 }

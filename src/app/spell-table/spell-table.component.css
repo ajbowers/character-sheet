@@ -1,0 +1,23 @@
+th {
+  text-align: center;
+}
+
+td, th {
+  padding-right: 15px;
+  padding-left: 15px;
+  border-right: 1px solid black;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.component {
+  width: 98%;
+  color:rgb(182, 191, 200);
+}
+
+.component:hover {
+  border: solid 1px rgb(182, 191, 200);
+  background-color:black;
+}

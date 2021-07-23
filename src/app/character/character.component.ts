@@ -33,6 +33,7 @@ export class CharacterComponent implements OnInit {
 
   ngOnInit(): void {
     this.character = this.createCharacter();
+    this.calculateWidthHeightOfComponents();
   }
 
   compileItems(character: Character) {
@@ -46,6 +47,35 @@ export class CharacterComponent implements OnInit {
     });
 
     return _items;
+  }
+
+  getComponentWidth(componentId: string) {
+    let width = 0;
+    this.character.components.forEach(_component => {
+      if (_component.name === componentId) {
+        width = _component.width;
+      }
+    });
+    return width;
+  }
+
+  getComponentHeight(componentId: string) {
+    let height = 0;
+    this.character.components.forEach(_component => {
+      if (_component.name === componentId) {
+        height = _component.height;
+      }
+    });
+    return height;
+  }
+
+  calculateWidthHeightOfComponents() {
+    let components = this.character.components;
+    components.forEach(_components => {
+      console.log(_components.name);
+      let element = document.getElementById(_components.name);
+      console.log(element);
+    })
   }
 
   getClasses(_classes: Class[]) {
@@ -80,6 +110,12 @@ export class CharacterComponent implements OnInit {
     return items;
   }
 
+  clearLocalStorage() {
+    console.log("TEST");
+    window.localStorage.removeItem(this.character.name + "-sheet");
+    window.location.reload();
+  }
+
   getSpells() {
     let spells: Spell[] = [];
     return spells;
@@ -111,7 +147,8 @@ export class CharacterComponent implements OnInit {
         characterLocal.hitPointsMax,
         characterLocal.skills,
         this.getItems(characterLocal.classes),
-        characterLocal.spells
+        characterLocal.spells,
+        characterLocal.components
       );
     } else {
       _char = JSON.parse(jsonString!);

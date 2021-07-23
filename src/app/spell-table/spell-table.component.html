@@ -1,0 +1,25 @@
+<div id="featuresTable">
+  <table>
+    <tr>
+      <th> Name </th>
+      <th> Spell Level </th>
+      <th> Type </th>
+      <th> Range </th>
+      <th> Description </th>
+      <th> Speed </th>
+      <th> Duration </th>
+      <th> Components </th>
+    </tr>
+    <tr *ngFor="let _spells of character.spells">
+      <td>{{_spells.name}}</td>
+      <td class="centerText">{{_spells.level}}</td>
+      <td class="centerText">{{_spells.type}}</td>
+      <td class="centerText">{{_spells.range}}</td>
+      <td>{{_spells.description}}</td>
+      <td class="centerText">{{_spells.castingTime}}</td>
+      <td class="centerText">{{_spells.duration}}</td>
+    </tr>
+    <tr>
+    </tr>
+  </table>
+</div>

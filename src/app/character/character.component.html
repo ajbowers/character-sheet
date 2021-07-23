@@ -1,43 +1,67 @@
 <div class="character-sheet">
-  <app-resizable-draggable
-  [width]="250" [left]="0" [top]="0"
+
+  <p style="float: right;" (click)="clearLocalStorage()"> RESET </p>
+
+  <app-resizable-draggable id="app-base-character"
+  [width]="getComponentWidth('app-base-character')"
+  [height]="getComponentHeight('app-base-character')"
+  [left]="0" [top]="0"
   [header]="'Background'"
   [character]="character"
   [selector]="'app-base-character'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable
-  [width]="350" [left]="0" [top]="0"
+  <app-resizable-draggable id="app-skill-block"
+  [width]="getComponentWidth('app-skill-block')"
+  [height]="getComponentHeight('app-skill-block')"
+  [left]="0" [top]="0"
   [header]="'Skills'"
   [character]="character"
-  [selector]="'app-skills-block'">
+  [selector]="'app-skill-block'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable
-  [width]="250"  [left]="0" [top]="0"
+  <app-resizable-draggable id="app-stat-block"
+  [width]="getComponentWidth('app-stat-block')"
+  [height]="getComponentHeight('app-stat-block')"
+  [left]="0" [top]="0"
   [header]="'Core Stats'"
   [character]="character"
   [selector]="'app-stat-block'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable
-  [width]="250"  [left]="0" [top]="0"
+  <app-resizable-draggable id="app-class-block"
+  [width]="getComponentWidth('app-class-block')"
+  [height]="getComponentHeight('app-class-block')"
+  [left]="0" [top]="0"
   [header]="'Class'"
   [character]="character"
   [selector]="'app-class-block'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable
-  [width]="1000"  [left]="0" [top]="0"
+  <app-resizable-draggable id="app-item-table"
+  [width]="getComponentWidth('app-item-table')"
+  [height]="getComponentHeight('app-item-table')"
+  [left]="0" [top]="0"
   [header]="'Items'"
   [character]="character"
   [selector]="'app-item-table'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable
-  [width]="1000"  [left]="0" [top]="0"
+  <app-resizable-draggable id="app-ability-table"
+  [width]="getComponentWidth('app-ability-table')"
+  [height]="getComponentHeight('app-ability-table')"
+  [left]="0" [top]="0"
   [header]="'Features'"
   [character]="character"
   [selector]="'app-ability-table'">
+  </app-resizable-draggable>
+
+  <app-resizable-draggable id="app-spell-table"
+  [width]="getComponentWidth('app-spell-table')"
+  [height]="getComponentHeight('app-spell-table')"
+  [left]="0" [top]="0"
+  [header]="'Spells'"
+  [character]="character"
+  [selector]="'app-spell-table'">
   </app-resizable-draggable>
 </div>

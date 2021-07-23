@@ -1,3 +1,4 @@
+import { SkillBlockComponent } from './skill-block/skill-block.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ClassBlockComponent } from './class-block/class-block.component';
 import { ResizableDraggableComponent } from './resizable-draggable/resizable-draggable.component';
-import { SkillsBlockComponent } from './skills-block/skills-block.component';
+import { SpellTableComponent } from './spell-table/spell-table.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SkillsBlockComponent } from './skills-block/skills-block.component';
     BaseCharacterComponent,
     ClassBlockComponent,
     ResizableDraggableComponent,
-    SkillsBlockComponent
+    SkillBlockComponent,
+    SpellTableComponent
   ],
   imports: [
     BrowserModule,

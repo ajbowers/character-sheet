@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SkillsBlockComponent } from './skills-block.component';
+import { SpellTableComponent } from './spell-table.component';
 
-describe('SkillsBlockComponent', () => {
-  let component: SkillsBlockComponent;
-  let fixture: ComponentFixture<SkillsBlockComponent>;
+describe('SpellTableComponent', () => {
+  let component: SpellTableComponent;
+  let fixture: ComponentFixture<SpellTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SkillsBlockComponent ]
+      declarations: [ SpellTableComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SkillsBlockComponent);
+    fixture = TestBed.createComponent(SpellTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
