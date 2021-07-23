@@ -1,35 +1,35 @@
-<div class="component resizable-draggable" #box cdkDrag dragAndDropReposition (cdkDragEnded)="dragEnd($event)"
-  [style.width.px]="width" [style.height.px]="height"
+<div id={{selector}} class="component resizable-draggable" #box cdkDrag dragAndDropReposition
+  (cdkDragEnded)="dragEnd($event)" [style.width.px]="width" [style.height.px]="height"
   [style.transform]="'translate3d('+ left + 'px,' + top + 'px,' + '0px)'" [class.active]="status === 1 || status === 2"
   (window:mouseup)="setStatus($event, 0)">
-  <h2 class="resizeHeader" [style.padding-left.px]="5" cdkDragHandle>[ {{header}} ] </h2>
+  <p class="resizeHeader" [style.padding-left.px]="5" cdkDragHandle>[ {{header}} ] </p>
 
-  <h3 [style.padding-left.px]="5" (click)="toggleShowHide()" *ngIf="show; else hide">Hide</h3>
+  <p class="showHideButton" [style.padding-left.px]="5" (click)="toggleShowHide()" *ngIf="show; else hide">Hide</p>
   <ng-template #hide>
-    <h3 [style.padding-left.px]="5" (click)="toggleShowHide()">Show</h3>
+    <p class="showHideButton" [style.padding-left.px]="5" (click)="toggleShowHide()">Show</p>
   </ng-template>
   <div *ngIf="show">
-  <div *ngIf="selector == 'app-base-character'">
-    <app-base-character [width]="width" [height]="height" [character]='character'></app-base-character>
+    <div *ngIf="selector == 'app-base-character'">
+      <app-base-character [width]="width" [height]="height" [character]='character'></app-base-character>
+    </div>
+    <div *ngIf="selector == 'app-stat-block'">
+      <app-stat-block [width]="width" [height]="height" [character]='character'></app-stat-block>
+    </div>
+    <div *ngIf="selector == 'app-class-block'">
+      <app-class-block [width]="width" [height]="height" [character]='character'></app-class-block>
+    </div>
+    <div *ngIf="selector == 'app-item-table'">
+      <app-item-table [width]="width" [height]="height" [character]='character'></app-item-table>
+    </div>
+    <div *ngIf="selector == 'app-ability-table'">
+      <app-ability-table [width]="width" [height]="height" [character]='character'></app-ability-table>
+    </div>
+    <div *ngIf="selector == 'app-skill-block'">
+      <app-skill-block [width]="width" [height]="height" [character]='character'></app-skill-block>
+    </div>
+    <div *ngIf="selector == 'app-spell-table'">
+      <app-spell-table [width]="width" [height]="height" [character]='character'></app-spell-table>
+    </div>
   </div>
-  <div *ngIf="selector == 'app-stat-block'">
-    <app-stat-block [width]="width" [height]="height" [character]='character'></app-stat-block>
-  </div>
-  <div *ngIf="selector == 'app-class-block'">
-    <app-class-block [width]="width" [height]="height" [character]='character'></app-class-block>
-  </div>
-  <div *ngIf="selector == 'app-item-table'">
-    <app-item-table [width]="width" [height]="height" [character]='character'></app-item-table>
-  </div>
-  <div *ngIf="selector == 'app-ability-table'">
-    <app-ability-table [width]="width" [height]="height" [character]='character'></app-ability-table>
-  </div>
-  <div *ngIf="selector == 'app-skill-block'">
-    <app-skill-block [width]="width" [height]="height" [character]='character'></app-skill-block>
-  </div>
-  <div *ngIf="selector == 'app-spell-table'">
-    <app-spell-table [width]="width" [height]="height" [character]='character'></app-spell-table>
-  </div>
-</div>
-  <div class="resize-action" (mousedown)="setStatus($event, 1)"></div>
+  <div class="resize-action" (mousedown)="setStatus($event, 1)" (mouseup)="updateWidthHeight($event)"></div>
 </div>

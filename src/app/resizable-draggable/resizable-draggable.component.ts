@@ -3,6 +3,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, HostLis
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { CharacterSheetService } from '../character-sheet.service';
 import characterJSON from '../../assets/data/character-sample.json';
+import { AUTO_STYLE } from '@angular/animations';
 const enum Status {
   OFF = 0,
   RESIZE = 1,
@@ -32,11 +33,12 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
   public status: Status = Status.OFF;
   private mouseClick!: { x: number; y: number; left: number; top: number; };
 
-  show = true;
+
 
   @Input('selector') public selector!: string;
   @Input('character') public character!: Character;
   @Input('header') public header!: string;
+  @Input('show') public show: boolean = true;
 
   constructor(private element: ElementRef,
     private characterService: CharacterSheetService) { }
@@ -48,18 +50,31 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.loadBox();
     this.loadContainer();
+  }
 
+  getComponentHeight(componentId: string) {
+    let height = 0;
+    this.character.components.forEach(_component => {
+      if (_component.name === componentId) {
+        height = _component.height;
+      }
+    });
+    return height;
   }
 
   toggleShowHide() {
     this.show = !this.show;
+    if (this.show != true) {
+      this.height = 150;
+    } else {
+      this.height = this.getComponentHeight(this.selector);
+    }
+    this.characterService.updateShow(this.show, this.selector, this.character);
   }
 
   loadComponentLocation() {
     let leftOffset = 0;
     let topOffset = 0;
-    let height = 0;
-    let width = 0;
     let components = this.character.components;
 
     components.forEach(_component => {
@@ -68,8 +83,8 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
       if (_name === this.selector) {
         leftOffset = _component.left;
         topOffset = _component.top;
-        height = _component.height;
-        width = _component.width
+        this.height = _component.height;
+        this.width = _component.width
       }
     });
 
@@ -78,8 +93,6 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
     this.element.nativeElement.style.position = "absolute";
     this.element.nativeElement.style.left = leftOffset + 'px';
     this.element.nativeElement.style.top = topOffset + 'px';
-    this.element.nativeElement.style.height = height + 'px';
-    this.element.nativeElement.style.width = width + 'px';
   }
 
   private loadBox() {
@@ -119,8 +132,13 @@ export class ResizableDraggableComponent implements OnInit, AfterViewInit {
   }
 
   dragEnd(event: CdkDragEnd) {
-    console.log(this.selector);
-    this.characterService.dragEnd(event, this.selector);
+
+    this.characterService.dragEnd(event, this.selector, this.character);
+  }
+
+  updateWidthHeight(event: MouseEvent) {
+    this.characterService.updateWidthHeight(event, this.selector, this.character);
+
   }
 
   private resize() {

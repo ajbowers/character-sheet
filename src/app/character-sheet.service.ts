@@ -1,5 +1,6 @@
 import { CdkDragEnd } from '@angular/cdk/drag-drop';
 import { Injectable } from '@angular/core';
+import { Character } from './models/character';
 
 @Injectable({
   providedIn: 'root'
@@ -8,13 +9,40 @@ export class CharacterSheetService {
 
   constructor() { }
 
-  dragEnd(event: CdkDragEnd, selector: string) {
-    let positionStorage = window.localStorage;
-    let ele = event.source.element.nativeElement;
-    let left = ele.getBoundingClientRect().left;
-    let top  = ele.getBoundingClientRect().top;
-    positionStorage.setItem(selector + "PosLeft", left.toString());
-    positionStorage.setItem(selector + "PosTop", top.toString());
+  dragEnd(event: CdkDragEnd, selector: string, character: Character) {
+    let componentRect = document.getElementById(selector)!.getBoundingClientRect();
+    character.components.forEach(_component => {
+      if (_component.name === selector) {
+        _component.left   = componentRect.left;
+        _component.top    = componentRect.top;
+      }
+    });
+    let jsonCharacter = JSON.stringify(character);
+    window.localStorage.setItem(character.name + "-sheet", jsonCharacter);
+  }
+
+  updateWidthHeight(event: MouseEvent, selector: string, character: Character) {
+    let componentRect = document.getElementById(selector)!.getBoundingClientRect();
+    character.components.forEach(_component => {
+      if (_component.name === selector) {
+        _component.height = componentRect.height;
+        _component.width  = componentRect.width;
+      }
+    });
+    let jsonCharacter = JSON.stringify(character);
+    window.localStorage.setItem(character.name + "-sheet", jsonCharacter);
+  }
+
+  updateShow(show: boolean, selector: string, character: Character) {
+    console.log("UPDATING SHOW/HIDE FIELD: " + selector);
+    character.components.forEach(_component => {
+      if (_component.name === selector) {
+        _component.show = show;
+      }
+    });
+    console.log(character.components.filter(c => c.name == selector));
+    let jsonCharacter = JSON.stringify(character);
+    window.localStorage.setItem(character.name + "-sheet", jsonCharacter);
   }
 
   calcProficiency(level: number) {

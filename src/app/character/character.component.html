@@ -2,16 +2,17 @@
 
   <p style="float: right;" (click)="clearLocalStorage()"> RESET </p>
 
-  <app-resizable-draggable id="app-base-character"
+  <app-resizable-draggable
   [width]="getComponentWidth('app-base-character')"
   [height]="getComponentHeight('app-base-character')"
+  [show]="getShowHideStatus('app-base-character')"
   [left]="0" [top]="0"
   [header]="'Background'"
   [character]="character"
   [selector]="'app-base-character'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable id="app-skill-block"
+  <app-resizable-draggable
   [width]="getComponentWidth('app-skill-block')"
   [height]="getComponentHeight('app-skill-block')"
   [left]="0" [top]="0"
@@ -20,7 +21,7 @@
   [selector]="'app-skill-block'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable id="app-stat-block"
+  <app-resizable-draggable
   [width]="getComponentWidth('app-stat-block')"
   [height]="getComponentHeight('app-stat-block')"
   [left]="0" [top]="0"
@@ -29,7 +30,7 @@
   [selector]="'app-stat-block'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable id="app-class-block"
+  <app-resizable-draggable
   [width]="getComponentWidth('app-class-block')"
   [height]="getComponentHeight('app-class-block')"
   [left]="0" [top]="0"
@@ -38,7 +39,7 @@
   [selector]="'app-class-block'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable id="app-item-table"
+  <app-resizable-draggable
   [width]="getComponentWidth('app-item-table')"
   [height]="getComponentHeight('app-item-table')"
   [left]="0" [top]="0"
@@ -47,7 +48,7 @@
   [selector]="'app-item-table'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable id="app-ability-table"
+  <app-resizable-draggable
   [width]="getComponentWidth('app-ability-table')"
   [height]="getComponentHeight('app-ability-table')"
   [left]="0" [top]="0"
@@ -56,7 +57,7 @@
   [selector]="'app-ability-table'">
   </app-resizable-draggable>
 
-  <app-resizable-draggable id="app-spell-table"
+  <app-resizable-draggable
   [width]="getComponentWidth('app-spell-table')"
   [height]="getComponentHeight('app-spell-table')"
   [left]="0" [top]="0"

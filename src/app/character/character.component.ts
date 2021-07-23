@@ -33,7 +33,6 @@ export class CharacterComponent implements OnInit {
 
   ngOnInit(): void {
     this.character = this.createCharacter();
-    this.calculateWidthHeightOfComponents();
   }
 
   compileItems(character: Character) {
@@ -47,6 +46,17 @@ export class CharacterComponent implements OnInit {
     });
 
     return _items;
+  }
+
+  getShowHideStatus(componentId: string) {
+
+    let _show = true;
+    this.character.components.forEach(_component => {
+      if (_component.name === componentId) {
+        _show = _component.show;
+      }
+    });
+    return _show;
   }
 
   getComponentWidth(componentId: string) {
@@ -69,14 +79,7 @@ export class CharacterComponent implements OnInit {
     return height;
   }
 
-  calculateWidthHeightOfComponents() {
-    let components = this.character.components;
-    components.forEach(_components => {
-      console.log(_components.name);
-      let element = document.getElementById(_components.name);
-      console.log(element);
-    })
-  }
+
 
   getClasses(_classes: Class[]) {
     let classes: Class[] = [];
